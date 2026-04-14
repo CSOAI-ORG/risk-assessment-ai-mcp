@@ -1,10 +1,5 @@
 name: risk-assessment-ai-mcp
-description: "MEOK AI Labs — Risk Assessment tools for AI agents and LLMs"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/risk-assessment-ai-mcp
-license: MIT
-categories: [Business, Risk Management]
-tags: [risk-assessment, risk-management, risk-analysis, compliance, enterprise-risk]
-runtime: python
-entrypoint: server.py
+description: "Risk Assessment Ai Mcp \u2014 Assess business and project risks with\
+  \ scoring matrices."
+version: 1.0.0
+tools: []
