@@ -1,6 +1,6 @@
 {
   "name": "risk-assessment-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs MCP Server",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Enterprise risk assessment and management.",
   "version": "1.0.0",
   "tools": [
     {
@@ -8,7 +8,20 @@
       "description": "Assess risk",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "risk_name": {
+            "type": "string"
+          },
+          "likelihood": {
+            "type": "integer"
+          },
+          "impact": {
+            "type": "integer"
+          },
+          "category": {
+            "type": "string"
+          }
+        },
         "required": []
       }
     },
@@ -17,8 +30,17 @@
       "description": "Create risk register",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "project_name"
+        ]
       }
     },
     {
@@ -26,8 +48,32 @@
       "description": "Add risk to register",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "register_id": {
+            "type": "string"
+          },
+          "risk_name": {
+            "type": "string"
+          },
+          "likelihood": {
+            "type": "integer"
+          },
+          "impact": {
+            "type": "integer"
+          },
+          "category": {
+            "type": "string"
+          },
+          "mitigation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "register_id",
+          "risk_name",
+          "likelihood",
+          "impact"
+        ]
       }
     },
     {
@@ -35,8 +81,14 @@
       "description": "Get risks in register",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "register_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "register_id"
+        ]
       }
     },
     {
@@ -44,8 +96,23 @@
       "description": "Update risk status",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "risk_id": {
+            "type": "string"
+          },
+          "new_likelihood": {
+            "type": "integer"
+          },
+          "new_impact": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "risk_id"
+        ]
       }
     },
     {
@@ -53,8 +120,23 @@
       "description": "Create mitigation plan",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "risk_id": {
+            "type": "string"
+          },
+          "actions": {
+            "type": "array"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "due_date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "risk_id"
+        ]
       }
     },
     {
@@ -62,8 +144,14 @@
       "description": "Get mitigation progress",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "risk_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "risk_id"
+        ]
       }
     },
     {
@@ -71,7 +159,11 @@
       "description": "Calculate contingency reserve",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "risks": {
+            "type": "array"
+          }
+        },
         "required": []
       }
     },
@@ -80,8 +172,14 @@
       "description": "Get heatmap data",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "register_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "register_id"
+        ]
       }
     },
     {
@@ -89,7 +187,11 @@
       "description": "Get highest priority risks",
       "parameters": {
         "type": "object",
-        "properties": {},
+        "properties": {
+          "limit": {
+            "type": "integer"
+          }
+        },
         "required": []
       }
     },
@@ -98,8 +200,17 @@
       "description": "Analyze risk trends",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "register_id": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "register_id"
+        ]
       }
     },
     {
@@ -107,8 +218,17 @@
       "description": "Export risk report",
       "parameters": {
         "type": "object",
-        "properties": {},
-        "required": []
+        "properties": {
+          "register_id": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "register_id"
+        ]
       }
     }
   ]

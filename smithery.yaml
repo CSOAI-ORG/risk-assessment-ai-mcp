@@ -1,40 +1,127 @@
 name: risk-assessment-ai-mcp
-description: MEOK AI Labs MCP Server
+description: Enterprise risk assessment and management.
 version: 1.0.0
 tools:
 - name: assess_risk
   description: Assess risk
-  parameters: []
+  parameters:
+  - name: risk_name
+    type: string
+    required: false
+  - name: likelihood
+    type: integer
+    required: false
+  - name: impact
+    type: integer
+    required: false
+  - name: category
+    type: string
+    required: false
 - name: create_risk_register
   description: Create risk register
-  parameters: []
+  parameters:
+  - name: project_name
+    type: string
+    required: true
+  - name: owner
+    type: string
+    required: false
 - name: add_risk
   description: Add risk to register
-  parameters: []
+  parameters:
+  - name: register_id
+    type: string
+    required: true
+  - name: risk_name
+    type: string
+    required: true
+  - name: likelihood
+    type: integer
+    required: true
+  - name: impact
+    type: integer
+    required: true
+  - name: category
+    type: string
+    required: false
+  - name: mitigation
+    type: string
+    required: false
 - name: get_risk_register
   description: Get risks in register
-  parameters: []
+  parameters:
+  - name: register_id
+    type: string
+    required: true
 - name: update_risk_status
   description: Update risk status
-  parameters: []
+  parameters:
+  - name: risk_id
+    type: string
+    required: true
+  - name: new_likelihood
+    type: integer
+    required: false
+  - name: new_impact
+    type: integer
+    required: false
+  - name: status
+    type: string
+    required: false
 - name: create_mitigation_plan
   description: Create mitigation plan
-  parameters: []
+  parameters:
+  - name: risk_id
+    type: string
+    required: true
+  - name: actions
+    type: array
+    required: false
+  - name: owner
+    type: string
+    required: false
+  - name: due_date
+    type: string
+    required: false
 - name: get_mitigation_progress
   description: Get mitigation progress
-  parameters: []
+  parameters:
+  - name: risk_id
+    type: string
+    required: true
 - name: calculate_reserve
   description: Calculate contingency reserve
-  parameters: []
+  parameters:
+  - name: risks
+    type: array
+    required: false
 - name: risk_heatmap_data
   description: Get heatmap data
-  parameters: []
+  parameters:
+  - name: register_id
+    type: string
+    required: true
 - name: get_top_risks
   description: Get highest priority risks
-  parameters: []
+  parameters:
+  - name: limit
+    type: integer
+    required: false
 - name: risk_trend_analysis
   description: Analyze risk trends
-  parameters: []
+  parameters:
+  - name: register_id
+    type: string
+    required: true
+  - name: days
+    type: integer
+    required: false
 - name: export_risk_report
   description: Export risk report
-  parameters: []
+  parameters:
+  - name: register_id
+    type: string
+    required: true
+  - name: format
+    type: string
+    required: false
