@@ -1,4 +1,40 @@
 name: risk-assessment-ai-mcp
 description: MEOK AI Labs MCP Server
 version: 1.0.0
-tools: []
+tools:
+- name: assess_risk
+  description: Assess risk
+  parameters: []
+- name: create_risk_register
+  description: Create risk register
+  parameters: []
+- name: add_risk
+  description: Add risk to register
+  parameters: []
+- name: get_risk_register
+  description: Get risks in register
+  parameters: []
+- name: update_risk_status
+  description: Update risk status
+  parameters: []
+- name: create_mitigation_plan
+  description: Create mitigation plan
+  parameters: []
+- name: get_mitigation_progress
+  description: Get mitigation progress
+  parameters: []
+- name: calculate_reserve
+  description: Calculate contingency reserve
+  parameters: []
+- name: risk_heatmap_data
+  description: Get heatmap data
+  parameters: []
+- name: get_top_risks
+  description: Get highest priority risks
+  parameters: []
+- name: risk_trend_analysis
+  description: Analyze risk trends
+  parameters: []
+- name: export_risk_report
+  description: Export risk report
+  parameters: []
