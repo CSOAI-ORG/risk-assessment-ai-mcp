@@ -1,6 +1,6 @@
 {
   "name": "risk-assessment-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Enterprise risk assessment and management.",
+  "description": "MCP server for risk assessment ai. Features assess risk, create risk register, add risk. From MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
