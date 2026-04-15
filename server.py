@@ -10,6 +10,18 @@ import sys, os
 
 sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
+
+from datetime import datetime, timezone
+from collections import defaultdict
+
+FREE_DAILY_LIMIT = 15
+_usage = defaultdict(list)
+def _rl(c="anon"):
+    now = datetime.now(timezone.utc)
+    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
+    if len(_usage[c]) >= FREE_DAILY_LIMIT: return json.dumps({"error": f"Limit {FREE_DAILY_LIMIT}/day"})
+    _usage[c].append(now); return None
+
 from mcp.server.models import InitializationOptions
 from mcp.server import NotificationOptions, Server
 from mcp.server.stdio import stdio_server
@@ -17,7 +29,7 @@ from mcp.types import Resource, Tool, TextContent
 import mcp.types as types
 
 _store = {"assessments": [], "risks": [], "mitigation_plans": [], "risk_registers": {}}
-server = Server("risk-assessment-ai-mcp")
+server = Server("risk-assessment-ai")
 
 
 def create_id():
@@ -44,7 +56,7 @@ def calculate_risk_score(likelihood: int, impact: int) -> dict:
 
 
 @server.list_resources()
-async def handle_list_resources():
+def handle_list_resources():
     return [
         Resource(
             uri="risk://register", name="Risk Register", mimeType="application/json"
@@ -53,7 +65,7 @@ async def handle_list_resources():
 
 
 @server.list_tools()
-async def handle_list_tools():
+def handle_list_tools():
     return [
         Tool(
             name="assess_risk",
@@ -189,7 +201,7 @@ async def handle_list_tools():
 
 
 @server.call_tool()
-async def handle_call_tool(name: str, arguments: Any = None) -> list[types.TextContent]:
+def handle_call_tool(name: str, arguments: Any = None) -> list[types.TextContent]:
     args = arguments or {}
     api_key = args.get("api_key", "")
     allowed, msg, tier = check_access(api_key)
@@ -202,6 +214,8 @@ async def handle_call_tool(name: str, arguments: Any = None) -> list[types.TextC
                 ),
             )
         ]
+    if err := _rl():
+        return [TextContent(type="text", text=err)]
 
     if name == "assess_risk":
         result = calculate_risk_score(args.get("likelihood", 3), args.get("impact", 3))
