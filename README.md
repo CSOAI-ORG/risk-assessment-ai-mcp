@@ -1,3 +1,5 @@
+[![risk-assessment-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/risk-assessment-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/risk-assessment-ai-mcp)
+
 <div align="center">
 
 [![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/risk-assessment-ai-mcp)](https://github.com/CSOAI-ORG/risk-assessment-ai-mcp/stargazers)
