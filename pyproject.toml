@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "risk-assessment-ai-mcp"
-version = "1.0.4"
+version = "1.0.5"
 readme = "README.md"
 description = "MCP server for risk assessment ai. Features assess risk, create risk register, add risk. From MEOK AI Labs."
 license = {file = "LICENSE"}
