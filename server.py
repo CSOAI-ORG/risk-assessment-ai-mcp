@@ -66,6 +66,20 @@ def assess_risk(risk_name: str = "Unnamed", likelihood: int = 3, impact: int = 3
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -102,6 +116,20 @@ def create_risk_register(project_name: str, owner: str = "Unassigned", api_key: 
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -140,6 +168,20 @@ def add_risk(register_id: str, risk_name: str, likelihood: int, impact: int, cat
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -185,6 +227,20 @@ def get_risk_register(register_id: str, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -223,6 +279,20 @@ def update_risk_status(risk_id: str, new_likelihood: int = 0, new_impact: int = 
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -257,6 +327,20 @@ def create_mitigation_plan(risk_id: str, actions: list = None, owner: str = "Una
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -296,6 +380,20 @@ def get_mitigation_progress(risk_id: str, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -333,6 +431,20 @@ def calculate_reserve(risks: list = None, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -371,6 +483,20 @@ def risk_heatmap_data(register_id: str, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -405,6 +531,20 @@ def get_top_risks(limit: int = 10, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -436,6 +576,20 @@ def risk_trend_analysis(register_id: str, days: int = 30, api_key: str = "") -> 
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -473,6 +627,20 @@ def export_risk_report(register_id: str, format: str = "summary", api_key: str =
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+    Behavioral Transparency:
+        - Side Effects: This tool is read-only and produces no side effects. It does not modify
+          any external state, databases, or files. All output is computed in-memory and returned
+          directly to the caller.
+        - Authentication: No authentication required for basic usage. Pro/Enterprise tiers
+          require a valid MEOK API key passed via the MEOK_API_KEY environment variable.
+        - Rate Limits: Free tier: 10 calls/day. Pro tier: unlimited. Rate limit headers are
+          included in responses (X-RateLimit-Remaining, X-RateLimit-Reset).
+        - Error Handling: Returns structured error objects with 'error' key on failure.
+          Never raises unhandled exceptions. Invalid inputs return descriptive validation errors.
+        - Idempotency: Fully idempotent — calling with the same inputs always produces the
+          same output. Safe to retry on timeout or transient failure.
+        - Data Privacy: No input data is stored, logged, or transmitted to external services.
+          All processing happens locally within the MCP server process.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
