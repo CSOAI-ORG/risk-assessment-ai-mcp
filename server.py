@@ -66,6 +66,14 @@ def assess_risk(risk_name: str = "Unnamed", likelihood: int = 3, impact: int = 3
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        risk_name (str): The risk name to analyze or process.
+        likelihood (int): The likelihood to analyze or process.
+        impact (int): The impact to analyze or process.
+        category (str): The category to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -116,6 +124,12 @@ def create_risk_register(project_name: str, owner: str = "Unassigned", api_key: 
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        project_name (str): The project name to analyze or process.
+        owner (str): The owner to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -168,6 +182,16 @@ def add_risk(register_id: str, risk_name: str, likelihood: int, impact: int, cat
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        register_id (str): The register id to analyze or process.
+        risk_name (str): The risk name to analyze or process.
+        likelihood (int): The likelihood to analyze or process.
+        impact (int): The impact to analyze or process.
+        category (str): The category to analyze or process.
+        mitigation (str): The mitigation to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -227,6 +251,11 @@ def get_risk_register(register_id: str, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        register_id (str): The register id to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -279,6 +308,14 @@ def update_risk_status(risk_id: str, new_likelihood: int = 0, new_impact: int = 
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        risk_id (str): The risk id to analyze or process.
+        new_likelihood (int): The new likelihood to analyze or process.
+        new_impact (int): The new impact to analyze or process.
+        status (str): The status to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -327,6 +364,14 @@ def create_mitigation_plan(risk_id: str, actions: list = None, owner: str = "Una
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        risk_id (str): The risk id to analyze or process.
+        actions (list): The actions to analyze or process.
+        owner (str): The owner to analyze or process.
+        due_date (str): The due date to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -380,6 +425,11 @@ def get_mitigation_progress(risk_id: str, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        risk_id (str): The risk id to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -431,6 +481,11 @@ def calculate_reserve(risks: list = None, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        risks (list): The risks to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -483,6 +538,11 @@ def risk_heatmap_data(register_id: str, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        register_id (str): The register id to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -531,6 +591,11 @@ def get_top_risks(limit: int = 10, api_key: str = "") -> str:
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        limit (int): The limit to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -576,6 +641,12 @@ def risk_trend_analysis(register_id: str, days: int = 30, api_key: str = "") -> 
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        register_id (str): The register id to analyze or process.
+        days (int): The days to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -627,6 +698,12 @@ def export_risk_report(register_id: str, format: str = "summary", api_key: str =
     When NOT to use:
         Do not use as a substitute for qualified legal counsel. This tool
         provides technical compliance guidance, not legal advice.
+
+    Args:
+        register_id (str): The register id to analyze or process.
+        format (str): The format to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
