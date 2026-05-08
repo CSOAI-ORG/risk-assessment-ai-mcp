@@ -1,45 +1,66 @@
-[![risk-assessment-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/risk-assessment-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/risk-assessment-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/risk-assessment-ai-mcp)](https://pypi.org/project/risk-assessment-ai-mcp/)
-
-[![risk-assessment-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/risk-assessment-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/risk-assessment-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/risk-assessment-ai-mcp)](https://github.com/CSOAI-ORG/risk-assessment-ai-mcp/stargazers)
+# Risk Assessment Ai MCP
 
-# uriskU assessmentU aiU mcp
+**MCP server for risk assessment ai mcp operations**
 
-**MEOK AI Labs — risk-assessment-ai-mcp MCP Server. Enterprise risk assessment and management.**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/risk-assessment-ai-mcp)](https://www.npmjs.com/package/@meok-ai/risk-assessment-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-risk-assessment-ai-mcp)](https://pypi.org/project/meok-risk-assessment-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/risk-assessment-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Risk Assessment Ai MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `assess_risk` | Assess risk |
+| `create_risk_register` | Create risk register |
+| `add_risk` | Add risk to register |
+| `get_risk_register` | Get risks in register |
+| `update_risk_status` | Update risk status |
+| `create_mitigation_plan` | Create mitigation plan |
+| `get_mitigation_progress` | Get mitigation progress |
+| `calculate_reserve` | Calculate contingency reserve |
+| `risk_heatmap_data` | Get heatmap data |
+| `get_top_risks` | Get highest priority risks |
+| `risk_trend_analysis` | Analyze risk trends |
+| `export_risk_report` | Export risk report |
 
 ## Installation
 
 ```bash
-pip install risk-assessment-ai-mcp
-# or
-npm install -g @meok-ai/risk-assessment-ai-mcp
+pip install meok-risk-assessment-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "risk-assessment-ai": {
+      "command": "python",
+      "args": ["-m", "meok_risk_assessment_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 12 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/risk-assessment-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
