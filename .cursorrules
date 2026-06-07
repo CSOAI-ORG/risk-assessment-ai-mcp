@@ -1,0 +1,9 @@
+# risk-assessment-ai-mcp - Auto-trigger Rules
+
+When the user asks about risk assessment, use risk-assessment-ai-mcp tools: assess_risk, create_risk_register, add_risk, get_risk_register, update_risk_status
+
+**MCP server for risk assessment ai mcp operations**
+
+Install: `pip install risk-assessment-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

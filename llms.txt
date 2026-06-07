@@ -1,0 +1,57 @@
+# risk-assessment-ai-mcp
+# **MCP server for risk assessment ai mcp operations**
+
+## Install
+```bash
+pip install risk-assessment-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `assess_risk`
+Assess risk
+
+### `create_risk_register`
+Create risk register
+
+### `add_risk`
+Add risk to register
+
+### `get_risk_register`
+Get risks in register
+
+### `update_risk_status`
+Update risk status
+
+### `create_mitigation_plan`
+Create mitigation plan
+
+### `get_mitigation_progress`
+Get mitigation progress
+
+### `calculate_reserve`
+Calculate contingency reserve
+
+### `risk_heatmap_data`
+Get heatmap data
+
+### `get_top_risks`
+Get highest priority risks
+
+### `risk_trend_analysis`
+Analyze risk trends
+
+### `export_risk_report`
+Export risk report
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

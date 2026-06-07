@@ -1,0 +1,49 @@
+{
+  "name": "risk-assessment-ai-mcp",
+  "title": "Risk Assessment Ai Mcp",
+  "description": "MCP server for risk assessment ai. Features assess risk, create risk register, add risk. From MEOK AI Labs.",
+  "version": "1.0.10",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "assess_risk"
+    },
+    {
+      "name": "create_risk_register"
+    },
+    {
+      "name": "add_risk"
+    },
+    {
+      "name": "get_risk_register"
+    },
+    {
+      "name": "update_risk_status"
+    },
+    {
+      "name": "create_mitigation_plan"
+    },
+    {
+      "name": "get_mitigation_progress"
+    },
+    {
+      "name": "calculate_reserve"
+    },
+    {
+      "name": "risk_heatmap_data"
+    },
+    {
+      "name": "get_top_risks"
+    },
+    {
+      "name": "risk_trend_analysis"
+    },
+    {
+      "name": "export_risk_report"
+    }
+  ]
+}

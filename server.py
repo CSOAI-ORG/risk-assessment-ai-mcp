@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""MEOK AI Labs — risk-assessment-ai-mcp MCP Server. Enterprise risk assessment and management."""
+"""
+MEOK AI Labs — risk-assessment-ai-mcp MCP Server. Enterprise risk assessment and management."""
 
 import json
 from datetime import datetime, timedelta, timezone
@@ -7,7 +8,6 @@ from typing import Any
 import uuid
 import sys, os
 
-sys.path.insert(0, os.path.expanduser("~/clawd/meok-labs-engine/shared"))
 from auth_middleware import check_access
 from mcp.server.fastmcp import FastMCP
 from collections import defaultdict
@@ -91,7 +91,7 @@ def assess_risk(risk_name: str = "Unnamed", likelihood: int = 3, impact: int = 3
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     result = calculate_risk_score(likelihood, impact)
@@ -147,7 +147,7 @@ def create_risk_register(project_name: str, owner: str = "Unassigned", api_key: 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     register = {
@@ -209,7 +209,7 @@ def add_risk(register_id: str, risk_name: str, likelihood: int, impact: int, cat
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if register_id not in _store["risk_registers"]:
@@ -273,7 +273,7 @@ def get_risk_register(register_id: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if register_id not in _store["risk_registers"]:
@@ -333,7 +333,7 @@ def update_risk_status(risk_id: str, new_likelihood: int = 0, new_impact: int = 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     for risk in _store["risks"]:
@@ -389,7 +389,7 @@ def create_mitigation_plan(risk_id: str, actions: list = None, owner: str = "Una
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     plan = {
@@ -447,7 +447,7 @@ def get_mitigation_progress(risk_id: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     plans = [p for p in _store["mitigation_plans"] if p.get("risk_id") == risk_id]
@@ -503,7 +503,7 @@ def calculate_reserve(risks: list = None, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     risks_list = risks or []
@@ -560,7 +560,7 @@ def risk_heatmap_data(register_id: str, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if register_id not in _store["risk_registers"]:
@@ -613,7 +613,7 @@ def get_top_risks(limit: int = 10, api_key: str = "") -> str:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     sorted_risks = sorted(
@@ -664,7 +664,7 @@ def risk_trend_analysis(register_id: str, days: int = 30, api_key: str = "") -> 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if register_id not in _store["risk_registers"]:
@@ -721,7 +721,7 @@ def export_risk_report(register_id: str, format: str = "summary", api_key: str =
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl(): return err
 
     if register_id not in _store["risk_registers"]:
@@ -735,5 +735,8 @@ def export_risk_report(register_id: str, format: str = "summary", api_key: str =
     )
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()
