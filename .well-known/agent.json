@@ -1,0 +1,131 @@
+{
+  "name": "risk-assessment-ai-mcp",
+  "description": "Risk Assessment Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/risk-assessment-ai-mcp.html",
+  "version": "1.0.10",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "assess_risk",
+      "name": "Assess Risk",
+      "description": "assess_risk via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_risk_register",
+      "name": "Create Risk Register",
+      "description": "create_risk_register via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "add_risk",
+      "name": "Add Risk",
+      "description": "add_risk via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_risk_register",
+      "name": "Get Risk Register",
+      "description": "get_risk_register via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "update_risk_status",
+      "name": "Update Risk Status",
+      "description": "update_risk_status via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "create_mitigation_plan",
+      "name": "Create Mitigation Plan",
+      "description": "create_mitigation_plan via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_mitigation_progress",
+      "name": "Get Mitigation Progress",
+      "description": "get_mitigation_progress via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "calculate_reserve",
+      "name": "Calculate Reserve",
+      "description": "calculate_reserve via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "risk_heatmap_data",
+      "name": "Risk Heatmap Data",
+      "description": "risk_heatmap_data via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_top_risks",
+      "name": "Get Top Risks",
+      "description": "get_top_risks via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "risk_trend_analysis",
+      "name": "Risk Trend Analysis",
+      "description": "risk_trend_analysis via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "export_risk_report",
+      "name": "Export Risk Report",
+      "description": "export_risk_report via risk-assessment-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

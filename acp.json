@@ -1,0 +1,30 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "risk-assessment-ai-mcp",
+    "description": "Risk Assessment Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.10",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "risk-assessment-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "assess_risk",
+      "create_risk_register",
+      "add_risk",
+      "get_risk_register",
+      "update_risk_status",
+      "create_mitigation_plan",
+      "get_mitigation_progress",
+      "calculate_reserve",
+      "risk_heatmap_data",
+      "get_top_risks",
+      "risk_trend_analysis",
+      "export_risk_report"
+    ]
+  }
+}
