@@ -1,128 +1,37 @@
-name: risk-assessment-ai-mcp
-description: MCP server for risk assessment ai. Features assess risk, create risk
-  register, add risk. From MEOK AI Labs.
-version: 1.0.0
-tools:
-- name: assess_risk
-  description: Assess risk
-  parameters:
-  - name: risk_name
-    type: string
-    required: false
-  - name: likelihood
-    type: integer
-    required: false
-  - name: impact
-    type: integer
-    required: false
-  - name: category
-    type: string
-    required: false
-- name: create_risk_register
-  description: Create risk register
-  parameters:
-  - name: project_name
-    type: string
-    required: true
-  - name: owner
-    type: string
-    required: false
-- name: add_risk
-  description: Add risk to register
-  parameters:
-  - name: register_id
-    type: string
-    required: true
-  - name: risk_name
-    type: string
-    required: true
-  - name: likelihood
-    type: integer
-    required: true
-  - name: impact
-    type: integer
-    required: true
-  - name: category
-    type: string
-    required: false
-  - name: mitigation
-    type: string
-    required: false
-- name: get_risk_register
-  description: Get risks in register
-  parameters:
-  - name: register_id
-    type: string
-    required: true
-- name: update_risk_status
-  description: Update risk status
-  parameters:
-  - name: risk_id
-    type: string
-    required: true
-  - name: new_likelihood
-    type: integer
-    required: false
-  - name: new_impact
-    type: integer
-    required: false
-  - name: status
-    type: string
-    required: false
-- name: create_mitigation_plan
-  description: Create mitigation plan
-  parameters:
-  - name: risk_id
-    type: string
-    required: true
-  - name: actions
-    type: array
-    required: false
-  - name: owner
-    type: string
-    required: false
-  - name: due_date
-    type: string
-    required: false
-- name: get_mitigation_progress
-  description: Get mitigation progress
-  parameters:
-  - name: risk_id
-    type: string
-    required: true
-- name: calculate_reserve
-  description: Calculate contingency reserve
-  parameters:
-  - name: risks
-    type: array
-    required: false
-- name: risk_heatmap_data
-  description: Get heatmap data
-  parameters:
-  - name: register_id
-    type: string
-    required: true
-- name: get_top_risks
-  description: Get highest priority risks
-  parameters:
-  - name: limit
-    type: integer
-    required: false
-- name: risk_trend_analysis
-  description: Analyze risk trends
-  parameters:
-  - name: register_id
-    type: string
-    required: true
-  - name: days
-    type: integer
-    required: false
-- name: export_risk_report
-  description: Export risk report
-  parameters:
-  - name: register_id
-    type: string
-    required: true
-  - name: format
-    type: string
-    required: false
+# smithery.yaml — Smithery (https://smithery.ai) submission payload
+# Repo: CSOAI-ORG/risk-assessment-ai-mcp
+# Generated: 2026-06-09
+# Transport: stdio (PyPI package, installed via uvx)
+# See: DISTRIBUTION_GAPS_2026-06-08.md for the channel strategy
+startCommand:
+  type: stdio
+  timeout: 120000
+  pingInterval: 5000
+  pingTimeout: 30000
+  configSchema:
+    type: object
+    required: []
+    properties:
+      apiKey:
+        type: string
+        description: "MEOK API key (optional; required for x402 paywalled tools)"
+        default: ""
+      x402PayTo:
+        type: string
+        description: "USDC address for x402 micropayments (default: meok.ai wallet)"
+        default: ""
+      logLevel:
+        type: string
+        description: "Log level (debug, info, warn, error)"
+        default: "info"
+    additionalProperties: false
+  commandFunction: |-
+    (config) => ({
+      command: 'uvx',
+      args: ['risk_assessment_ai'],
+      env: {
+        MEOK_API_KEY: config.apiKey || '',
+        X402_PAY_TO: config.x402PayTo || '',
+        MEOK_LOG_LEVEL: config.logLevel || 'info',
+      }
+    })
