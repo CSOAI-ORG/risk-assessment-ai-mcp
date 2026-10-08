@@ -9,7 +9,7 @@ import uuid
 import sys, os
 
 from auth_middleware import check_access
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer as FastMCP  # mcp 2.x: FastMCP renamed MCPServer
 from collections import defaultdict
 import urllib.request as _meter_urlreq
 import urllib.error as _meter_urlerr
