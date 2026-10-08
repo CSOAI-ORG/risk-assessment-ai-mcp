@@ -9,7 +9,7 @@ description = "MCP server for risk assessment ai. Features assess risk, create r
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-dependencies = ["mcp>=1.0.0"]
+dependencies = ["mcp>=2.0.0"]
 keywords = ["mcp", "ai", "meok", "risk", "assessment"]
 classifiers = [
     "Programming Language :: Python :: 3",
